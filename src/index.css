@@ -1,13 +1,54 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+  @apply fixed z-30 grid grid-cols-2 top-[20%] bg-gradient-to-b from-orange-400 to-yellow-600 shadow-2xl h-[250px] w-[250px] rounded-xl shadow-black p-[10px]
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.name {
+  @apply text-3xl font-bold text-blue-950
+}
+
+.app {
+  @apply h-[100%] w-[100%] flex flex-col top-0 bg-gradient-to-t from-white to-gray-200
+}
+
+.avatar {
+  @apply rounded-3xl h-80 shadow-md shadow-slate-800 my-[4em]
+}
+
+.projects {
+  @apply grid grid-cols-3 self-center h-24
+}
+
+.contact-btn {
+  @apply text-[25px] text-white font-bold my-[3em] rounded-xl  p-6 bg-gradient-to-b from-gray-400 to-gray-500 hover:shadow-md hover:shadow-black
+}
+
+.backdrop {
+  @apply fixed z-10 top-0 left-0 h-[100vh] w-[100%] bg-black flex justify-center items-center opacity-[0.8]
+}
+
+.contact-modal {
+  @apply flex z-20 flex-col h-[400px] w-[800px] text-blue-600 rounded-xl bg-gradient-to-br from-slate-300 to-slate-400 pl-24 pt-8
+}
+
+.navbar-icon {
+  @apply relative flex items-center justify-center bg-gradient-to-tr from-blue-400 to-teal-700 h-24 w-24 mx-auto my-2 rounded-2xl transition-all cursor-pointer;
+}
+.navbar-tip{
+  @apply absolute w-auto p-2 m-2 min-w-max right-20 rounded-md shadow-md text-blue-300 bg-gray-900 text-xl font-bold transition-all duration-100 scale-0 origin-right; 
+}
+
+.container {
+  @apply h-full grid grid-flow-row grid-cols-2 p-[20px] justify-center mx-[5%]
+}
+
+.item {
+  @apply p-[8px] h-[400px] w-[525px] m-6 hover:shadow-lg hover:shadow-black
+}
+
+.item-img {
+  @apply h-[400px] w-[100%] px-[10px] object-cover hover:object-contain hover:scale-[105%] duration-1000 bg-gradient-to-tr from-orange-400 to-yellow-600 rounded-xl  transition-all hover:shadow-lg hover:shadow-gray-50
 }
